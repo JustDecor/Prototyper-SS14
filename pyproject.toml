@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prototyper-ss14"
+version = "0.1.0"
+description = "A Python tool that generates Space Station 14 YAML prototypes and RSI sprites, then validates them for errors."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PySide6-Essentials",
+    "ruamel.yaml",
+    "Pillow",
+    "jsonschema"
+]
+
+[project.optional-dependencies]
+dev = ["pytest",
+    "pytest-qt",
+    "ruff"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/prototyper_ss14"]
